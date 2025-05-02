@@ -1,9 +1,9 @@
-import { ReactNode } from 'react';
+import { ReactNode } from "react";
 
-import Link from 'next/link';
+import Link from "next/link";
 
-import { PageLinks } from '../components/page-links/PageLinks';
-import { SignIn } from '../components/sign-in-button/SignIn';
+import { PageLinks } from "../components/page-links/PageLinks";
+import { SignIn } from "../components/sign-in-button/SignIn";
 
 type AppLayoutProps = {
     children: ReactNode;
@@ -11,9 +11,9 @@ type AppLayoutProps = {
 
 export const AppLayout = ({ children }: AppLayoutProps) => {
     return (
-        <div className="flex flex-col h-screen">
-            <header className="flex justify-between items-center p-4 gap-4 h-16">
-                <Link href="/" className="font-bold tracking-wider text-xl">
+        <div className="flex h-screen flex-col">
+            <header className="flex h-16 items-center justify-between border-b p-4">
+                <Link href="/" className="text-xl font-bold tracking-wider">
                     SPINTIRES
                 </Link>
 
@@ -23,6 +23,7 @@ export const AppLayout = ({ children }: AppLayoutProps) => {
                     <SignIn />
                 </div>
             </header>
+
             <main className="flex-1">{children}</main>
         </div>
     );

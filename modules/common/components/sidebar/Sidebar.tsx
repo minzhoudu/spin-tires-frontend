@@ -2,7 +2,7 @@ import { Category } from "./sidebar-category/Category";
 
 export const Sidebar = () => {
     return (
-        <div className="flex h-full flex-col items-center gap-6 border-r border-gray-500 py-4">
+        <div className="bg-sidebar flex h-full flex-col items-center gap-6 border-r border-gray-500 py-4">
             <h3 className="text-lg font-bold tracking-widest">FILTERI</h3>
 
             <div className="flex w-full flex-col items-center px-4">

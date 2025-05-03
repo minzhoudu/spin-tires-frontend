@@ -1,8 +1,13 @@
+import { MaxWidthWrapper } from "@/modules/common/components/max-width-wrapper/MaxWidthWrapper";
+
 export const HomePage = () => {
     return (
-        <div className="flex h-full flex-col items-center justify-center">
-            <h1 className="text-3xl font-bold">Dobro došli na SPINTIRES</h1>
-            <p>Vaša mesta za kupovinu guma</p>
+        <div>
+            <section className="mt-1 bg-slate-50">
+                <MaxWidthWrapper>
+                    <div>Shop</div>
+                </MaxWidthWrapper>
+            </section>
         </div>
     );
 };

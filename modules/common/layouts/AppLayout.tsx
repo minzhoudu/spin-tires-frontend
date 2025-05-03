@@ -2,8 +2,8 @@ import { ReactNode } from "react";
 
 import Link from "next/link";
 
-import { PageLinks } from "../components/page-links/PageLinks";
 import { SignIn } from "../components/sign-in-button/SignIn";
+import { PageLinks } from "../components/page-links/PageLinks";
 
 type AppLayoutProps = {
     children: ReactNode;
@@ -12,14 +12,14 @@ type AppLayoutProps = {
 export const AppLayout = ({ children }: AppLayoutProps) => {
     return (
         <div className="flex h-screen flex-col">
-            <header className="flex h-16 items-center justify-between border-b border-gray-500 p-4">
+            <header className="flex h-16 items-center justify-between p-4 shadow">
                 <Link href="/" className="text-xl font-bold tracking-wider">
                     SPINTIRES
                 </Link>
 
                 <PageLinks />
 
-                <div>
+                <div className="hidden md:block">
                     <SignIn />
                 </div>
             </header>

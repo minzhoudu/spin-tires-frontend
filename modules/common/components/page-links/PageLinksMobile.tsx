@@ -1,16 +1,13 @@
 "use client";
 
-import {
-    Accordion,
-    AccordionContent,
-    AccordionItem,
-    AccordionTrigger,
-} from "@/components/ui/accordion";
-import { MenuIcon } from "lucide-react";
+import { Accordion } from "@/components/ui/accordion";
+import { MenuIcon, UserIcon } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
 import { useWindowWidth } from "../../hooks/useWindowWidth";
+import { SingleAccordionLink } from "./accordion-link/SingleAccordionLink";
+import { SubAccordionLink } from "./accordion-link/SubAccordionLink";
 import { LINKS } from "./links";
 
 export const PageLinksMobile = () => {
@@ -42,51 +39,22 @@ export const PageLinksMobile = () => {
                     {LINKS.map((link) => {
                         if (!link.subLinks?.length) {
                             return (
-                                <AccordionItem
-                                    value={link.href}
-                                    key={link.href}
-                                    className="px-2"
-                                >
-                                    <Link
-                                        href={link.href}
-                                        key={link.href}
-                                        className="block w-full py-2 text-sm hover:underline"
-                                    >
-                                        {link.label}
-                                    </Link>
-                                </AccordionItem>
+                                <SingleAccordionLink
+                                    key={link.id}
+                                    link={link}
+                                />
                             );
                         }
 
-                        return (
-                            <AccordionItem
-                                value={link.href}
-                                key={link.href}
-                                className="px-2"
-                            >
-                                <AccordionTrigger className="cursor-pointer">
-                                    {link.label}
-                                </AccordionTrigger>
-                                <AccordionContent className="flex flex-col gap-2 px-5">
-                                    {link.subLinks?.map((subLink) => (
-                                        <Link
-                                            href={subLink.href}
-                                            key={subLink.href}
-                                            className="text-sm"
-                                        >
-                                            {subLink.label}
-                                        </Link>
-                                    ))}
-                                </AccordionContent>
-                            </AccordionItem>
-                        );
+                        return <SubAccordionLink key={link.id} link={link} />;
                     })}
 
                     <Link
                         href="/login"
-                        className="mx-auto mt-5 block w-1/3 min-w-30 border py-2 text-center text-sm"
+                        className="mx-auto mt-5 flex w-1/3 min-w-30 items-center justify-center gap-2 border py-2 text-center text-sm"
                     >
-                        Login
+                        <UserIcon size={18} />
+                        Prijava
                     </Link>
                 </Accordion>
             )}

@@ -5,6 +5,7 @@ import {
 } from "@/components/ui/navigation-menu";
 
 import { Link } from "../links";
+import { cn } from "@/lib/utils";
 
 type SingleLinkProps = {
     link: Link;
@@ -15,7 +16,7 @@ export const SingleLink = ({ link }: SingleLinkProps) => {
         <NavigationMenuItem key={link.id}>
             <NavigationMenuLink
                 href={link.href}
-                className={navigationMenuTriggerStyle()}
+                className={cn(navigationMenuTriggerStyle(), "text-lg")}
             >
                 {link.label}
             </NavigationMenuLink>

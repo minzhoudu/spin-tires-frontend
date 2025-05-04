@@ -15,7 +15,9 @@ type SublinkProps = {
 export const Sublink = ({ link }: SublinkProps) => {
     return (
         <NavigationMenuItem key={link.id}>
-            <NavigationMenuTrigger>{link.label}</NavigationMenuTrigger>
+            <NavigationMenuTrigger className="text-lg">
+                {link.label}
+            </NavigationMenuTrigger>
             <NavigationMenuContent>
                 <div className="flex w-[400px] flex-col gap-2">
                     {link.subLabel && (

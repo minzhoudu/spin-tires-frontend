@@ -11,7 +11,7 @@ type AppLayoutProps = {
 
 export const AppLayout = ({ children }: AppLayoutProps) => {
     return (
-        <div className="flex h-screen flex-col">
+        <div className="flex flex-col" id="app-layout">
             <header className="flex h-16 items-center justify-between p-4 shadow">
                 <Link href="/" className="text-xl font-bold tracking-wider">
                     SPINTIRES

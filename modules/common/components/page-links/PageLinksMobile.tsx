@@ -5,6 +5,7 @@ import { MenuIcon, UserIcon } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
+import { createPortal } from "react-dom";
 import { useWindowWidth } from "../../hooks/useWindowWidth";
 import { SingleAccordionLink } from "./accordion-link/SingleAccordionLink";
 import { SubAccordionLink } from "./accordion-link/SubAccordionLink";
@@ -30,34 +31,38 @@ export const PageLinksMobile = () => {
                 <MenuIcon />
             </button>
 
-            {isOpen && (
-                <Accordion
-                    type="single"
-                    collapsible
-                    className="absolute top-15 left-0 z-50 h-full w-full bg-white"
-                >
-                    {LINKS.map((link) => {
-                        if (!link.subLinks?.length) {
-                            return (
-                                <SingleAccordionLink
-                                    key={link.id}
-                                    link={link}
-                                />
-                            );
-                        }
-
-                        return <SubAccordionLink key={link.id} link={link} />;
-                    })}
-
-                    <Link
-                        href="/login"
-                        className="mx-auto mt-5 flex w-1/3 min-w-30 items-center justify-center gap-2 border py-2 text-center text-sm"
+            {isOpen &&
+                createPortal(
+                    <Accordion
+                        type="single"
+                        collapsible
+                        className="absolute top-15 left-0 z-50 w-full bg-white"
                     >
-                        <UserIcon size={18} />
-                        Prijava
-                    </Link>
-                </Accordion>
-            )}
+                        {LINKS.map((link) => {
+                            if (!link.subLinks?.length) {
+                                return (
+                                    <SingleAccordionLink
+                                        key={link.id}
+                                        link={link}
+                                    />
+                                );
+                            }
+
+                            return (
+                                <SubAccordionLink key={link.id} link={link} />
+                            );
+                        })}
+
+                        <Link
+                            href="/login"
+                            className="mx-auto my-5 flex w-1/3 min-w-30 items-center justify-center gap-2 border py-2 text-center text-sm"
+                        >
+                            <UserIcon size={18} />
+                            Prijava
+                        </Link>
+                    </Accordion>,
+                    document.getElementById("app-layout")!,
+                )}
         </div>
     );
 };

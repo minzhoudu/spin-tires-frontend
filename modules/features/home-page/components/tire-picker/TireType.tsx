@@ -19,11 +19,13 @@ export const TireType = ({
     return (
         <div
             className={cn(
-                "cursor-pointer rounded-lg border border-slate-200 bg-white p-2",
+                "cursor-pointer rounded-lg border border-slate-300 bg-slate-100 p-2",
                 isSelected && "border-2",
-                isSelected && type === "summer" && "border-orange-500",
-                isSelected && type === "winter" && "border-blue-500",
-                isSelected && type === "all-season" && "border-red-500",
+                isSelected && type === "summer" && "border-orange-500 bg-white",
+                isSelected && type === "winter" && "border-blue-500 bg-white",
+                isSelected &&
+                    type === "all-season" &&
+                    "border-red-500 bg-white",
             )}
             onClick={() => onSelect(type)}
         >

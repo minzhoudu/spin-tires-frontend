@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { TirePicker } from "../tire-picker/TirePicker";
 
 export const Banner = () => {
     return (
@@ -20,6 +21,12 @@ export const Banner = () => {
             </div>
 
             <div className="absolute top-0 right-0 bottom-0 left-0 bg-black/30" />
+
+            <TirePicker
+                className="absolute left-10 hidden gap-0 md:flex"
+                backgroundColor="bg-slate-200/90"
+                bodyClasses="rounded-b-lg rounded-r-lg"
+            />
         </div>
     );
 };

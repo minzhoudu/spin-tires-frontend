@@ -29,8 +29,8 @@ export const TirePicker = ({
                 Pretraga guma
             </h3>
 
-            <div className={cn("w-[500px] py-2", bodyClasses, backgroundColor)}>
-                <div className="flex justify-center gap-5 px-5">
+            <div className={cn("px-5 py-2", bodyClasses, backgroundColor)}>
+                <div className="flex justify-center gap-5 px-5 md:justify-normal">
                     <TireType
                         type="summer"
                         isSelected={selectedTireType === "summer"}

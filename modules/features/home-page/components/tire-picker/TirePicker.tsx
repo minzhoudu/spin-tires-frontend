@@ -66,7 +66,7 @@ export const TirePicker = ({
                             <input
                                 id="width"
                                 type="text"
-                                placeholder="175"
+                                placeholder="205"
                                 className="py-1.5 text-center outline-none"
                             />
                         </div>
@@ -78,7 +78,7 @@ export const TirePicker = ({
                             <input
                                 id="height"
                                 type="text"
-                                placeholder="80"
+                                placeholder="55"
                                 className="py-1.5 text-center outline-none"
                             />
                         </div>

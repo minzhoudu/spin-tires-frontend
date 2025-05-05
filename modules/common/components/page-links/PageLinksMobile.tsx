@@ -34,7 +34,7 @@ export const PageLinksMobile = () => {
                 <Accordion
                     type="single"
                     collapsible
-                    className="absolute top-16 left-0 w-full bg-white"
+                    className="absolute top-15 left-0 z-50 h-full w-full bg-white"
                 >
                     {LINKS.map((link) => {
                         if (!link.subLinks?.length) {

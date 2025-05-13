@@ -35,21 +35,24 @@ export const TirePicker = ({
                         type="summer"
                         isSelected={selectedTireType === "summer"}
                         onSelect={setSelectedTireType}
-                        icon={<Sun color="orange" size={36} />}
+                        Icon={Sun}
+                        color="orange"
                     />
 
                     <TireType
                         type="winter"
                         isSelected={selectedTireType === "winter"}
                         onSelect={setSelectedTireType}
-                        icon={<Snowflake color="#99c4ce" size={36} />}
+                        Icon={Snowflake}
+                        color="#99c4ce"
                     />
 
                     <TireType
                         type="all-season"
                         isSelected={selectedTireType === "all-season"}
                         onSelect={setSelectedTireType}
-                        icon={<SunSnow color="#FF4437" size={36} />}
+                        Icon={SunSnow}
+                        color="#FF4437"
                     />
                 </div>
 

@@ -1,4 +1,3 @@
-import { MaxWidthWrapper } from "@/modules/common/components/max-width-wrapper/MaxWidthWrapper";
 import { Banner } from "./components/banner/Banner";
 import { TirePicker } from "./components/tire-picker/TirePicker";
 

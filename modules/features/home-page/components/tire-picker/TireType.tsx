@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import { LucideIcon } from "lucide-react";
 import { ReactNode } from "react";
 
 export type TireType = "all" | "summer" | "winter" | "all-season";
@@ -7,29 +8,31 @@ type TireTypeProps = {
     type: TireType;
     isSelected: boolean;
     onSelect: (tireType: TireType) => void;
-    icon: ReactNode;
+    Icon: LucideIcon;
+    color: string;
 };
 
 export const TireType = ({
     type,
     isSelected,
     onSelect,
-    icon,
+    Icon,
+    color,
 }: TireTypeProps) => {
     return (
         <div
             className={cn(
-                "cursor-pointer rounded-lg border border-slate-300 bg-slate-100 p-2",
+                "cursor-pointer rounded-lg border border-slate-300 bg-white p-2",
                 isSelected && "border-2",
-                isSelected && type === "summer" && "border-orange-500 bg-white",
-                isSelected && type === "winter" && "border-blue-500 bg-white",
+                isSelected && type === "summer" && "border-white bg-orange-500",
+                isSelected && type === "winter" && "border-white bg-blue-500",
                 isSelected &&
                     type === "all-season" &&
-                    "border-red-500 bg-white",
+                    "border-white bg-red-500",
             )}
             onClick={() => onSelect(type)}
         >
-            {icon}
+            <Icon color={!isSelected ? color : "white"} size={36} />
         </div>
     );
 };

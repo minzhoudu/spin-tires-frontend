@@ -1,12 +1,13 @@
 import { Product } from "@/modules/common/models/product/product";
-import { SingleProduct } from "../single-product/Product";
+import { SingleProduct } from "../single-product/SingleProduct";
 
 type ProductsListProps = {
     products: Product[];
 };
+
 export const ProductsList = ({ products }: ProductsListProps) => {
     return (
-        <div className="grid h-[calc(100vh-150px)] grid-cols-1 gap-4 overflow-y-scroll sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+        <div className="grid w-full grid-cols-1 gap-x-3 gap-y-10 p-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {products.map((product) => (
                 <SingleProduct key={product.id} product={product} />
             ))}

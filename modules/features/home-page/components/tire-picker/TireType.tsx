@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 import { ReactNode } from "react";
 
-type TireType = "summer" | "winter" | "all-season";
+export type TireType = "all" | "summer" | "winter" | "all-season";
 
 type TireTypeProps = {
     type: TireType;

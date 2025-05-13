@@ -2,6 +2,7 @@ import Image from "next/image";
 
 import { cn } from "@/lib/utils";
 import { Product } from "@/modules/common/models/product/product";
+import { Snowflake, Sun, SunSnow } from "lucide-react";
 
 type ProductProps = {
     product: Product;
@@ -27,7 +28,7 @@ export const SingleProduct = ({ product }: ProductProps) => {
                     </h3>
                 </div>
 
-                <div className="flex items-center justify-between p-3">
+                <div className="flex items-center justify-between px-6 py-3">
                     <p className="text-muted text-center text-sm">
                         {product.brand}
                     </p>
@@ -38,10 +39,10 @@ export const SingleProduct = ({ product }: ProductProps) => {
             </div>
 
             <div className="bg-secondary flex w-full items-center justify-between p-3">
-                <h3 className="font-bold">RASPOLOŽIVA KOLIČINA</h3>
+                <h3 className="font-bold">RASPOLOŽIVOST</h3>
                 <div
                     className={cn(
-                        "rounded-full px-4 py-2 font-bold text-white",
+                        "rounded-full px-3 py-1 font-bold text-white",
                         product.quantity <= 0 ? "bg-red-500" : "bg-green-500",
                     )}
                 >
@@ -51,11 +52,25 @@ export const SingleProduct = ({ product }: ProductProps) => {
 
             <div className="h-[1px] w-[95%] bg-black/30" />
 
-            <div className="bg-secondary w-full p-3 text-right">
-                <h2 className="text-2xl font-bold">
-                    {product.price.toLocaleString("de-DE")} RSD
-                </h2>
-                <p className="text-muted-foreground text-sm">sa PDV-om</p>
+            <div className="bg-secondary flex w-full items-center justify-between p-3">
+                <div>
+                    {product.category === "summer" && (
+                        <Sun color="orange" size={30} />
+                    )}
+                    {product.category === "winter" && (
+                        <Snowflake color="#99c4ce" size={30} />
+                    )}
+                    {product.category === "all-season" && (
+                        <SunSnow color="#FF4437" size={30} />
+                    )}
+                </div>
+
+                <div className="text-right">
+                    <h2 className="text-2xl font-bold">
+                        {product.price.toLocaleString("de-DE")} RSD
+                    </h2>
+                    <p className="text-muted-foreground text-sm">sa PDV-om</p>
+                </div>
             </div>
         </div>
     );

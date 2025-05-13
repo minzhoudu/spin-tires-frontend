@@ -8,7 +8,7 @@ export const HomePage = () => {
                 <Banner />
 
                 <TirePicker
-                    className="md:hidden"
+                    className="my-3 md:hidden"
                     bodyClasses="w-full"
                     backgroundColor="bg-slate-200"
                 />

@@ -3,7 +3,17 @@ export type Product = {
     title: string;
     price: number;
     description: string;
-    category: string;
+    category: "summer" | "winter" | "all-season";
+    brand: string;
+    width: number;
+    height: number;
+    diameter: number;
+    speedIndex: string;
+    weight: number;
+    loadIndex: string;
+    countryOfOrigin: string;
+    ean: string;
+    quantity: number;
     image: string;
     rating: {
         rate: number;

@@ -3,7 +3,7 @@ import { TirePicker } from "../tire-picker/TirePicker";
 
 export const Banner = () => {
     return (
-        <div className="relative flex h-[70vh] items-center justify-center md:h-[90vh]">
+        <div className="relative flex h-[70vh] items-center justify-center md:h-[92.5vh]">
             <Image
                 src="/images/tires-banner.jpg"
                 alt="Tires banner"

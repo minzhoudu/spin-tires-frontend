@@ -1,10 +1,6 @@
-import {
-    Sidebar,
-    SidebarHeader,
-    SidebarProvider,
-} from "@/components/ui/sidebar";
-import { ProductsList } from "./products-list/ProductsList";
+import { SidebarProvider } from "@/components/ui/sidebar";
 import { Sider } from "@/modules/common/components/sider/Sider";
+import { ProductsList } from "./products-list/ProductsList";
 
 export const Products = async () => {
     return (

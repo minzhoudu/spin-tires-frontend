@@ -8,8 +8,7 @@ import {
     SidebarMenu,
     SidebarMenuItem,
 } from "@/components/ui/sidebar";
-import { CustomSelect } from "../select/CustomSelect";
-import { tireTypeOptions } from "../select/data/tire-type-options";
+import { TireTypeSelect } from "@/modules/features/products/products-list/components/filters/TireTypeSelect";
 
 export const Sider = () => {
     return (
@@ -26,10 +25,7 @@ export const Sider = () => {
                     <SidebarGroupContent>
                         <SidebarMenu>
                             <SidebarMenuItem className="hover:bg-slate-200">
-                                <CustomSelect
-                                    options={tireTypeOptions}
-                                    defaultValue={tireTypeOptions[0].value}
-                                />
+                                <TireTypeSelect />
 
                                 {/* <Checkbox id="terms" />
                                 <label

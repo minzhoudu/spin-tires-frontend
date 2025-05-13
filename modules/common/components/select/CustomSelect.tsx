@@ -1,5 +1,3 @@
-"use client";
-
 import {
     Select,
     SelectContent,
@@ -18,21 +16,19 @@ type CustomSelectProps = {
     options: Option[];
     label?: string;
     defaultValue?: string;
+    onChange: (value: string) => void;
 };
 
 export const CustomSelect = ({
     options,
     label,
     defaultValue,
+    onChange,
 }: CustomSelectProps) => {
-    const onChange = (value: string) => {
-        console.log(value);
-    };
-
     return (
-        <Select onValueChange={onChange}>
+        <Select onValueChange={onChange} defaultValue={defaultValue}>
             <SelectTrigger className="w-full">
-                <SelectValue placeholder={label} defaultValue={defaultValue} />
+                <SelectValue placeholder={label} />
             </SelectTrigger>
             <SelectContent>
                 {options.map((option) => (

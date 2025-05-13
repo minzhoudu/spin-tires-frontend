@@ -25,7 +25,7 @@ export const LINKS: Link[] = [
             {
                 id: 1,
                 label: "Sve gume",
-                href: "/tires/all",
+                href: "/tires",
                 icon: Layers,
             },
             {
